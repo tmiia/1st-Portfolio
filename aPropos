@@ -1,0 +1,112 @@
+    <!--<section id="info-page">
+        <h1 class="title">à propos</h1>
+        <div class="info">
+            <div class="pict-info">
+                <img class="img-info" src="../media/IMG_3144.JPG" alt="">
+            </div>
+            <div class="info-content">
+                <p class="text-info">Je m'appelle <span class="color">TELUSMA Nehémia</span>,<br>Je suis actuellement en 1ère année de BUT MMI à l'IUT Bordeaux Montaigne. Je suis passionné de développement web, j'ai d'abord voulu être Full Stack avant de me rendre compte que j'étais beaucoup plus attiré par le Front-End qui me permetait d'être créative.
+                </p>
+            </div>
+        </div>
+    </section>-->
+
+    <div class="info-page">
+        <section class="top">
+            <a  href="../index.html" class="button-back"><i class="fas fa-chevron-left"></i></a>
+            <div class="pict-container">
+            <img src="../media/IMG_3144.JPG" alt="Photo de profil">
+            </div>
+            <div id="overlay"></div>
+        </section>
+        <section class="bottom">
+            <h1 id="title-info">Qui suis-je ?</h1>
+        </section>
+    </div>
+
+
+
+
+
+    /*-----A PROPOS-----*/
+#info-page{
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+}
+.top{
+    height: 100vh;
+    position: relative;
+}
+.button-back{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >i{
+        color: $white;
+        font-size: 25px;
+    }
+    >i:hover{
+        color: $primary-color;
+    }
+}
+
+.pict-container{
+    position: absolute;
+    top: 55px;
+    left: -5%;
+    width: 85%;
+    >img{
+        border-right: 3px solid $white;
+        animation: overlay-opacity-img 1s ease-in;
+    }
+}
+#overlay{
+    position: absolute;
+    top: 55px;
+    left: -5px;
+    width: 1190px;
+    height: 660px;
+    background-color: $blue-navy;
+    animation: overlay-img 1s ease-in forwards;
+    border-left: 3px solid $white;
+}
+@keyframes overlay-img {
+    0%{
+        transform: translateX(-5%);
+    }
+    100%{
+        transform: translateX(90%);
+    }
+}
+@keyframes overlay-opacity-img {
+    0%{
+        opacity: 0.70;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.bottom{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.info-content{
+    width: 50%;
+
+    >p{
+        color: $white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5em;
+    }
+}
+#title-info{
+    color: $white;
+    font-family: "Montserrat",sans-serif;
+    text-transform: uppercase;
+}
